@@ -7,16 +7,18 @@ import numpy as np
 import pandas as pd
 import os
 
-class SimpleThresholdInputSpec(BaseInterfaceInputSpec):
+import meld
+
+class MeldInputSpec(BaseInterfaceInputSpec):
     volume = File(exists=True, desc='volume to be thresholded', mandatory=True)
     threshold = traits.Float(desc='everything below this value will be set to zero',
                              mandatory=True)
 
-class SimpleThresholdOutputSpec(TraitedSpec):
+class MeldOutputSpec(TraitedSpec):
     thresholded_volume = File(exists=True, desc="thresholded volume")
 
 
-class SimpleThreshold(BaseInterface):
+class MeldSimpleThreshold(BaseInterface):
 #    df = pd.DataFrame.from_csv("input.csv")
 #    meld_input_spec = df["filenames"]
     meld_input_spec = SimpleThresholdInputSpec
