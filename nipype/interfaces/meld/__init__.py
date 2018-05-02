@@ -7,6 +7,6 @@
 #
 ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ##
 
-from . import cluster, meld, nonparam, stat_helper
+from meld.interface import cluster, meld, nonparam, stat_helper
 
 __all__ = ['cluster', 'meld', 'nonparam', 'stat_helper']
